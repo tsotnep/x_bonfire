@@ -1,0 +1,14 @@
+mkdir reports
+cd ./reports
+mkdir node net zynq
+cd ..
+
+cp /home/tsotnep/ownCloud/workspace/vivado/nocnode_proj/nocnode_proj.runs/synth_1/NoC_Node.vds ./reports/node
+cp /home/tsotnep/ownCloud/workspace/vivado/nocnode_proj/nocnode_proj.runs/synth_1/NoC_Node_utilization_synth.rpt ./reports/node
+
+cp /home/tsotnep/ownCloud/workspace/vivado/nocnet_proj/nocnet_proj.runs/synth_1/noc2x2_v1_0.vds ./reports/net
+cp /home/tsotnep/ownCloud/workspace/vivado/nocnet_proj/nocnet_proj.runs/synth_1/noc2x2_v1_0_utilization_synth.rpt ./reports/net
+
+cp /home/tsotnep/ownCloud/workspace/vivado/noc_zynq_proj/noc_zynq_proj.runs/synth_1/design_1_wrapper.vds ./reports/zynq
+cp /home/tsotnep/ownCloud/workspace/vivado/noc_zynq_proj/noc_zynq_proj.runs/synth_1/design_1_wrapper_utilization_synth.rpt ./reports/zynq
+cp /home/tsotnep/ownCloud/workspace/vivado/noc_zynq_proj/noc_zynq_proj.runs/impl_1/design_1_wrapper_utilization_placed.rpt ./reports/zynq

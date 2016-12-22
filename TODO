@@ -1,0 +1,13 @@
+1. check if data_in is still connected to GND.
+
+2. try to connect BRAM data to AXI SLV reg.
+
+
+
+
+memory update:
+
+connect two memory from PE_0 to slv_reg_0, _1.
+also, two memory from PE_1 to slv_reg_2, _3
+
+and program it with one file

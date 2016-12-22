@@ -1,0 +1,4 @@
+GPIO : output value is in :
+design_1_i/axi_gpio_0/U0/gpio_core_1/gpio_io_o
+
+if you simply add waves in : Trigger setup and then press: Run Trigger, it will capture all data.

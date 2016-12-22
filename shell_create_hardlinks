@@ -1,0 +1,44 @@
+cd /home/tsotnep/ownCloud/git/x_bonfire
+mkdir hardlinks
+
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_0.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_1.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_2.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_3.vhd ./hardlinks/
+
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Router/credit_based/RTL/arbiter_in.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Router/credit_based/RTL/arbiter_out.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Router/credit_based/RTL/allocator.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Router/credit_based/RTL/xbar.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Router/credit_based/RTL/LBDR.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Router/credit_based/RTL/FIFO_one_hot_credit_based.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/mlite_pack.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/alu.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/bus_mux.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/cache.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/control.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ddr_ctrl.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/eth_dma.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/mem_ctrl.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/mult.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/pc_next.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/pipeline.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_0.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_1.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_2.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_3.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/reg_bank.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/shifter.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/uart.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/NI.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/mlite_cpu.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/plasma.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/NoC_Node.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/RTL/Router/credit_based/RTL/Router_32_bit_credit_based.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/Bonfire/Test/credit_based/TB_Package_32_bit_credit_based.vhd ./hardlinks/
+
+#they are modified
+ln /home/tsotnep/ownCloud/git/x_bonfire/src/network_2x2_NI_credit_based.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/x_bonfire/src/network_2x2_NI_credit_based_tb.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/x_bonfire/src/noc2x2_v1_0_S00_AXI.vhd ./hardlinks/
+ln /home/tsotnep/ownCloud/git/x_bonfire/src/noc2x2_v1_0.vhd ./hardlinks/

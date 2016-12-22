@@ -1,0 +1,40 @@
+remove_files /home/tsotnep/ip_repo/noc4x4_1.0/hdl/noc4x4_v1_0_S00_AXI.vhd
+remove_files /home/tsotnep/ip_repo/noc4x4_1.0/hdl/noc4x4_v1_0.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/arbiter_in.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/arbiter_out.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/allocator.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/xbar.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/LBDR.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/FIFO_one_hot_credit_based.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/mlite_pack.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/alu.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/bus_mux.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/cache.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/control.vhd
+#add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ddr_ctrl.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/eth_dma.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/mem_ctrl.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/mult.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/pc_next.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/pipeline.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/reg_bank.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/shifter.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/uart.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/NI.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/mlite_cpu.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/plasma.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/NoC_Node.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/Router_32_bit_credit_based.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/TB_Package_32_bit_credit_based.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/network_2x2_NI_credit_based.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/network_2x2_NI_credit_based_tb.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/noc4x4_v1_0_S00_AXI.vhd
+add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/noc4x4_v1_0.vhd
+
+
+
+#add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_0.txt
+#add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_1.txt
+#add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_2.txt
+#add_files -norecurse -scan_for_includes -copy_to /home/tsotnep/ip_repo/noc4x4_1.0/src -force /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_3.txt

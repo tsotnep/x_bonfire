@@ -1,0 +1,1 @@
+updatemem -debug -force --meminfo test.mmi --data test.mem --bit /home/tsotnep/ownCloud/workspace/vivado/noc_zynq_proj/noc_zynq_proj.runs/impl_1/design_1_wrapper.bit  --proc dummy --out download.bit > debug.txt

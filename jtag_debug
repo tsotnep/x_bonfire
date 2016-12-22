@@ -1,0 +1,62 @@
+########################################BRAM RW
+delete_hw_axi_txn [get_hw_axi_txns *]
+reset_hw_axi [get_hw_axis hw_axi_1]
+
+#get and set address from Address Editor
+set address 0x4000_0000
+set rt axi_bram_rt
+set wt axi_bram_wt
+
+#create transaction objects
+create_hw_axi_txn $rt [get_hw_axis hw_axi_1] -type read -address $address -len 1
+create_hw_axi_txn $wt [get_hw_axis hw_axi_1] -type write -address $address -len 1 -data {00000003}
+
+#report/verify
+report_property [get_hw_axi_txns $rt]
+report_property [get_hw_axi_txns $wt]
+
+
+#execute transactions
+run_hw_axi [get_hw_axi_txns $rt]
+run_hw_axi [get_hw_axi_txns $wt]
+run_hw_axi [get_hw_axi_txns $rt]
+
+#delete objects
+#delete_hw_axi_txn [get_hw_axi_txns *]
+
+
+
+
+################################ simple rw
+#create_hw_txn write_1 -type WRITE -data 0000_0000_0000_000A -size 32 -len 2 [get_hw_axis hw_axi_1]
+
+
+# noc 	0x44A0_0000	64K	0x44A0_FFFF
+# gpio	0x4000_0000	64K	0x4000_FFFF
+
+# empt	0x44A1_0000	64K	0x44A1_FFFF
+# bram	0xC000_0000	8K	0xC000_1FFF
+
+
+
+#00000000_00000000_00000000_00000000
+
+
+##############
+####set input delay for : uart_read, reset_rtl_0
+#set my_input uart_write
+#report_timing -from [all_inputs]
+#set_input_delay -clock [get_clocks sys_clock] -max 3 $my_input
+##report_timing -from $my_input -setup
+#set_input_delay -clock [get_clocks sys_clock] -min 1 $my_input
+##report_timing -from $my_input -hold
+#
+#
+#
+#####set output delay for : uart_write
+#set my_output uart_write
+#report_timing -from [all_inputs]
+#set_output_delay -clock [get_clocks sys_clock] -max 3 $my_output
+##report_timing -from $my_output -setup
+#set_output_delay -clock [get_clocks sys_clock] -min 1 $my_output
+##report_timing -from $my_output -hold

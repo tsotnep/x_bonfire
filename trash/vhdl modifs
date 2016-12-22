@@ -1,0 +1,30 @@
+	--in _AXI--
+
+	and remove process for writing slv_reg*
+
+	-- Add user logic here
+	tb_network_2x2_inst : entity work.tb_network_2x2
+		port map(
+			RX_L_0_out => slv_reg0,
+			RX_L_1_out => slv_reg1,
+			RX_L_2_out => slv_reg2,
+			RX_L_3_out => slv_reg3
+		);
+	-- User logic ends
+
+
+	-------------------------------------------
+
+--in _tb--
+USE ieee.numeric_std.ALL; 
+use IEEE.math.real."ceil";
+use IEEE.math.real."log2";
+
+entity tb_network_2x2 is
+	port (	
+        RX_L_0_out: out std_logic_vector(31 downto 0);
+        RX_L_1_out: out std_logic_vector(31 downto 0);
+        RX_L_2_out: out std_logic_vector(31 downto 0);
+        RX_L_3_out: out std_logic_vector(31 downto 0)
+	);
+end tb_network_2x2; 

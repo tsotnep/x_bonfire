@@ -1,0 +1,45 @@
+#Before doing stuff, do this to create necessary folder structure
+	cd /home/tsotnep/ownCloud/git/Bonfire/
+	git checkout devel
+	cad
+	cad
+	2
+	python simulate.py -D 2 -credit_based_FC -sim 10000 -end 11000 -NI 32
+	#then leave the simulator open
+
+
+#get compilers
+sudo apt install gcc-mips-linux-gnu build-essential
+
+
+#create Elf files
+cd /home/tsotnep/ownCloud/git/Bonfire/Software/Plasma/src/NI_test_2x2
+make all
+
+#create tools
+cd /home/tsotnep/ownCloud/git/Bonfire/Tools/Plasma_Utils
+make all
+
+#create Hex files
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./convert_to_bin -i /home/tsotnep/ownCloud/git/Bonfire/Software/Plasma/src/NI_test_2x2/ni_test_0.elf -t /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_0.txt
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./convert_to_bin -i /home/tsotnep/ownCloud/git/Bonfire/Software/Plasma/src/NI_test_2x2/ni_test_1.elf -t /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_1.txt
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./convert_to_bin -i /home/tsotnep/ownCloud/git/Bonfire/Software/Plasma/src/NI_test_2x2/ni_test_2.elf -t /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_2.txt
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./convert_to_bin -i /home/tsotnep/ownCloud/git/Bonfire/Software/Plasma/src/NI_test_2x2/ni_test_3.elf -t /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_3.txt
+
+#create vhd files
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./gen_ram_image /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx.vhd /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_0.txt /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_0.vhd
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./gen_ram_image /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx.vhd /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_1.txt /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_1.vhd
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./gen_ram_image /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx.vhd /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_2.txt /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_2.vhd
+/home/tsotnep/ownCloud/git/Bonfire/tmp/bin/plasma_utils/./gen_ram_image /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx.vhd /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_3.txt /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_3.vhd
+
+
+#relink vhd files into hardlinks
+ln -f /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_0.vhd /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/
+ln -f /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_1.vhd /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/
+ln -f /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_2.vhd /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/
+ln -f /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_3.vhd /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/
+
+
+cd /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/
+
+#then restart simulation from gui of vsim

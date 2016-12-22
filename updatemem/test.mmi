@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MemInfo Version="1" Minor="0">
+	<Processor Endianness="Litte" InstPath="dummy">
+	<AddressSpace Name="noc2x2_v1_0_0" Begin="0" End="4095">
+		<BusBlock>
+			<BitLane MemType="RAMB32" Placement="X3Y3"> 
+				<DataWidth MSB="31" LSB="0"/> 
+				<AddressRange Begin="0" End="4095"/> 
+				<Parity ON="false" NumBits="0"/> 
+			</BitLane>
+		</BusBlock>
+	</AddressSpace>
+	</Processor>
+	<Config>
+		<Option Name="Part" Val="xc7z020clg484-1"/>
+	</Config>
+</MemInfo>
+
+

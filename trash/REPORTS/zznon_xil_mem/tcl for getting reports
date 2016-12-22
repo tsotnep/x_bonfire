@@ -1,0 +1,14 @@
+foreach x [get_pblocks] {
+    puts "Reporting Pblock: $x ----------------------------------"
+    report_utilization -append -file /home/tsotnep/ownCloud/workspace/vivado/REPORTS/nocnode_proj/all_blocks.vds -pblocks $x
+    }
+
+
+    report_utilization -pblocks [get_pblocks] -file /home/tsotnep/ownCloud/workspace/vivado/REPORTS/nocnode_proj/all_blocks.vds
+
+
+    report_utilization -name utilization_1 -spreadsheet_file /home/tsotnep/ownCloud/workspace/vivado/REPORTS/nocnode_proj/all_blocks.xlsx
+
+    -spreadsheet_table "Clocking - BUFGCTRL"
+
+    NoC_Node
