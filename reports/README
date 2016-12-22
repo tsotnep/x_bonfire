@@ -2,6 +2,10 @@ in folder "disabled" - i have reports for designs where reg_bank.vhd is DISABLED
 
 in folder "enabled" i have reports for designs where reg_bank.vhd is ENABLED, i uncommented xilinx memory generation. 
 
+
+tl dr: 2x2 noc does not fit on fpga. since its using too much LUT based memory (distributed memory). we need to optimize that or get better FPGA, that has 2x more memory-capable-LUTs, because currently 195% of distributed memory is used.
+
+
 the difference is so huge, because, since those 16 registers of cpu was not created, they made rest of the circuit unused, and then, synthesis tool optimized them out.
 
 
