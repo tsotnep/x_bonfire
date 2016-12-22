@@ -1,0 +1,11 @@
+update IP, with resets
+program counter
+mem_ctrl
+turned off, because run out of memory. ffs.
+terminated because:
+==============================
+old instructions were running. now fixed. lets see
+removed 37 line in xdc.
+added first 10 signals and last 4 signals of uart, since in #1 it said no enough lutrams
+UART WORKS. FUCKING REG BANK WAS COMMENTED. REGENERATED IP, LETS SEE.
+==============================

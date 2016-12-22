@@ -1,0 +1,33 @@
+update IP, with resets
+debugging everything inside : 
+U1_plasma, 
+u1_cpu, - Removed u1_cpu, was too many
+u1_pc_next, 
+u2_mem_ctrl.
+in total 3800 bits to probe. was too much, paritioned in
+ila_0: 666 probes
+ila_1: 1 probe but 883 bits
+ila_2: probe1: 371, probe2: 1736 
+CPD file generation failed. fucked up. restarted
+==============================
+created new IP. where on node 0, ram_xilinx_0 is used. because, when i saw the diffs of ram files, 3 was different than others.
+added everythin inside UART. and every IO port of UART - from outside. infact, they're same. but still.
+didn't fit. removed external. 
+terminated because:
+==============================
+old instructions were running. now fixed. lets see
+implementing normal version without debuggers.
+didn't work with usb. neither with analyzer.
+UART WORKS. FUCKING REG BANK WAS COMMENTED. REGENERATED IP, LETS SEE.
+==============================
+
+
+
+
+
+
+
+
+
+
+

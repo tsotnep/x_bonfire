@@ -1,0 +1,47 @@
+update IP, with resets
+debugging all uart signals. ALL
+result was, only write_enable was working. that was: 1000000101000000101001 something like that. 
+that means:
+
+in Plasma: 
+	write_enable <= '1' when cpu_byte_we /= "0000" else '0';
+	enable_uart_read <= enable_uart and not write_enable;
+	enable_uart_write <= enable_uart and write_enable;
+
+in plasma, uart inst:
+	enable_write => enable_uart_write,
+
+terminated because:
+==============================
+old instructions were running. now fixed. lets see
+added debug to all uarts.
+failed because of this:
+*****************
+	[Place 30-484] The packing of lutram instances into lutram capable slices could not be obeyed. 
+
+		Number of LUTRAMs: 6580
+		Number of LUTRAM capable slices required is 4005 out of 4350 in the device (utilization 92.069%)
+
+	Even though there is a sufficient number of LUTRAM capable slices in the device, the packing algorithm was not able to find a solution. Please analyze your design to determine if the number of LUTRAMs can be reduced.
+
+	As a result, 1 LUTRAMs failed to place.
+	Names of these LUTRAMs:
+	u_ila_0/inst/ila_core_inst/u_trig/N_DDR_TC.N_DDR_TC_INST[2].U_TC/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/DUT/u_srl_drive type SRLC32E
+
+	None of mentioned LUTRAMs is from any Pblock.
+
+	Resolution: Please analyze your design to determine if the number of lutrams can be reduced by combining multiple lutrams into Block RAMs for example.
+*****************
+UART WORKS. FUCKING REG BANK WAS COMMENTED. REGENERATED IP, LETS SEE.
+==============================
+
+
+
+
+
+
+
+
+
+
+

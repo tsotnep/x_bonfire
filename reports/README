@@ -1,0 +1,14 @@
+in folder "disabled" - i have reports for designs where reg_bank.vhd is DISABLED. in other words, in this versions xilinx memory generation was commented.
+in folder "enabled" i have reports for designs where reg_bank.vhd is ENABLED, i uncommented xilinx memory generation. 
+
+the difference is so huge, because, since those 16 registers of cpu was not created, they made rest of the circuit unused, and then, synthesis tool optimized them out.
+
+
+
+
+
+
+
+**********block_vs_distributed_ram
+block ram::: memory tiles
+ditributed ram::: memory made out of LUTs.  - we have too much of those
