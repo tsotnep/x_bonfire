@@ -1,4 +1,4 @@
-create_project nocnet_proj /home/tsotnep/ownCloud/workspace/vivado/nocnet_proj -part xc7z020clg484-1 -force
+create_project nocnetip_proj /home/tsotnep/ownCloud/workspace/vivado/nocnetip_proj -part xc7z020clg484-1 -force
 set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
 set_property  ip_repo_paths  /home/tsotnep/ownCloud/workspace/vivado/ip_repo [current_project]
 set_property target_language VHDL [current_project]
@@ -72,9 +72,9 @@ update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
 update_compile_order -fileset sources_1
 
-ipx::package_project -root_dir /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnet -vendor user.org -library user -taxonomy /UserIP -import_files -set_current false
-ipx::unload_core /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnet/component.xml
-ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnet /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnet/component.xml
+ipx::package_project -root_dir /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnetip -vendor user.org -library user -taxonomy /UserIP -import_files -set_current false
+ipx::unload_core /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnetip/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnetip /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnetip/component.xml
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
 ipx::infer_bus_interfaces xilinx.com:signal:clock_rtl:1.0 [ipx::current_core]
@@ -83,7 +83,9 @@ ipx::create_xgui_files [ipx::current_core]
 ipx::update_checksums [ipx::current_core]
 ipx::save_core [ipx::current_core]
 close_project -delete
-set_property  ip_repo_paths  /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnet [current_project]
+set_property  ip_repo_paths  /home/tsotnep/ownCloud/workspace/vivado/ip_repo/nocnetip [current_project]
 update_ip_catalog
 puts "Project was created and Packaged as IP : successfully"
+# launch_runs synth_1 -jobs 2
+# wait_on_run synth_1
 close_project

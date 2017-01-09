@@ -138,39 +138,39 @@ begin
 
    end process;
 
-  -- cache_xilinx: if memory_type = "XILINX_16X" generate
-  -- begin
-  --    cache_tag: RAMB16_S9  --Xilinx specific
-  --    port map (
-  --       DO   => cache_tag_out(7 downto 0),
-  --       DOP  => cache_tag_out(8 downto 8),
-  --       ADDR => cache_address,             --registered
-  --       CLK  => clk,
-  --       DI   => cache_tag_in(7 downto 0),  --registered
-  --       DIP  => cache_tag_in(8 downto 8),
-  --       EN   => ONES(0),
-  --       SSR  => ZERO(0),
-  --       WE   => cache_we);
-  -- end generate; --cache_xilinx
+   cache_xilinx: if memory_type = "XILINX_16X" generate
+   begin
+      cache_tag: RAMB16_S9  --Xilinx specific
+      port map (
+         DO   => cache_tag_out(7 downto 0),
+         DOP  => cache_tag_out(8 downto 8),
+         ADDR => cache_address,             --registered
+         CLK  => clk,
+         DI   => cache_tag_in(7 downto 0),  --registered
+         DIP  => cache_tag_in(8 downto 8),
+         EN   => ONES(0),
+         SSR  => ZERO(0),
+         WE   => cache_we);
+   end generate; --cache_xilinx
 
-  --  cache_generic: if memory_type /= "XILINX_16X" generate
-  --  begin
-  --     cache_tag: process(clk, cache_address, cache_tag_in, cache_we)
-  --        constant ADDRESS_WIDTH : natural := 10;
-  --        type storage_array is
-  --           array(natural range 0 to 2 ** ADDRESS_WIDTH - 1) of
-  --           std_logic_vector(8 downto 0);
-  --        variable storage : storage_array;
-  --        variable index   : natural := 0;
-  --     begin
-  --        if rising_edge(clk) then
-  --           index := conv_integer(cache_address(ADDRESS_WIDTH-1 downto 0));
-  --           if cache_we = '1' then
-  --              storage(index) := cache_tag_in;
-  --           end if;
-  --           cache_tag_out <= storage(index);
-  --        end if;
-  --     end process; --cache_tag
-  --  end generate; --cache_generic
+    cache_generic: if memory_type /= "XILINX_16X" generate
+    begin
+       cache_tag: process(clk, cache_address, cache_tag_in, cache_we)
+          constant ADDRESS_WIDTH : natural := 10;
+          type storage_array is
+             array(natural range 0 to 2 ** ADDRESS_WIDTH - 1) of
+             std_logic_vector(8 downto 0);
+          variable storage : storage_array;
+          variable index   : natural := 0;
+       begin
+          if rising_edge(clk) then
+             index := conv_integer(cache_address(ADDRESS_WIDTH-1 downto 0));
+             if cache_we = '1' then
+                storage(index) := cache_tag_in;
+             end if;
+             cache_tag_out <= storage(index);
+          end if;
+       end process; --cache_tag
+    end generate; --cache_generic
 
 end; --logic

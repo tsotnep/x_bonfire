@@ -1,4 +1,4 @@
-create_project noc_jtag_proj /home/tsotnep/ownCloud/workspace/vivado/noc_jtag_proj -part xc7z020clg484-1 -force
+create_project nocjtag_proj /home/tsotnep/ownCloud/workspace/vivado/nocjtag_proj -part xc7z020clg484-1 -force
 set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
 set_property  ip_repo_paths  /home/tsotnep/ownCloud/workspace/vivado/ip_repo [current_project]
 set_property target_language VHDL [current_project]
@@ -42,15 +42,13 @@ endgroup
 add_files -fileset constrs_1 -norecurse /home/tsotnep/ownCloud/git/x_bonfire/src/constr.xdc
 
 import_files -fileset constrs_1 /home/tsotnep/ownCloud/git/x_bonfire/src/constr.xdc
-make_wrapper -files [get_files /home/tsotnep/ownCloud/workspace/vivado/noc_jtag_proj/noc_jtag_proj.srcs/sources_1/bd/design_1/design_1.bd] -top
-add_files -norecurse /home/tsotnep/ownCloud/workspace/vivado/noc_jtag_proj/noc_jtag_proj.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+make_wrapper -files [get_files /home/tsotnep/ownCloud/workspace/vivado/nocjtag_proj/nocjtag_proj.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/tsotnep/ownCloud/workspace/vivado/nocjtag_proj/nocjtag_proj.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
-
-#launch_runs synth_1 -jobs 2
-
-
 
 #launch_runs impl_1 -to_step write_bitstream -jobs 2
 
 launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+# close_project

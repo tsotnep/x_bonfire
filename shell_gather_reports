@@ -2,22 +2,19 @@
 cd /home/tsotnep/ownCloud/git/x_bonfire/
 mkdir reports
 cd reports
-mkdir node nocnet_proj noc_jtag_proj
+mkdir nocnode_proj 
+mkdir nocnetip_proj 
+mkdir nocjtag_proj
 cd ..
 
 
-\cp /home/tsotnep/ownCloud/workspace/vivado/node/node.runs/synth_1/NoC_Node.vds ./reports/node
-\cp /home/tsotnep/ownCloud/workspace/vivado/node/node.runs/synth_1/NoC_Node_utilization_synth.rpt ./reports/node
+\cp /home/tsotnep/ownCloud/workspace/vivado/nocnode_proj/nocnode_proj.runs/synth_1/*.vds     ./reports/nocnode_proj
+\cp /home/tsotnep/ownCloud/workspace/vivado/nocnode_proj/nocnode_proj.runs/synth_1/*.rpt     ./reports/nocnode_proj
+\cp /home/tsotnep/ownCloud/workspace/vivado/nocnetip_proj/nocnetip_proj.runs/synth_1/*.vds   ./reports/nocnetip_proj
+\cp /home/tsotnep/ownCloud/workspace/vivado/nocnetip_proj/nocnetip_proj.runs/synth_1/*.rpt   ./reports/nocnetip_proj
+\cp /home/tsotnep/ownCloud/workspace/vivado/nocjtag_proj/nocjtag_proj.runs/synth_1/*.vds     ./reports/nocjtag_proj
+\cp /home/tsotnep/ownCloud/workspace/vivado/nocjtag_proj/nocjtag_proj.runs/synth_1/*.rpt     ./reports/nocjtag_proj
 
 
 
-\cp /home/tsotnep/ownCloud/workspace/vivado/nocnet_proj/nocnet_proj.runs/synth_1/noc2x2_v1_0.vds ./reports/nocnet_proj
-\cp /home/tsotnep/ownCloud/workspace/vivado/nocnet_proj/nocnet_proj.runs/synth_1/noc2x2_v1_0_utilization_synth.rpt ./reports/nocnet_proj
-
-
-\cp /home/tsotnep/ownCloud/workspace/vivado/noc_jtag_proj/noc_jtag_proj.runs/synth_1/design_1_wrapper.vds ./reports/noc_jtag_proj
-\cp /home/tsotnep/ownCloud/workspace/vivado/noc_jtag_proj/noc_jtag_proj.runs/synth_1/design_1_wrapper_utilization_synth.rpt ./reports/noc_jtag_proj
-
-
-
-#\cp /home/tsotnep/ownCloud/workspace/vivado/noc_jtag_proj/noc_jtag_proj.runs/impl_1/design_1_wrapper_utilization_placed.rpt ./reports/noc_jtag_proj
+#\cp /home/tsotnep/ownCloud/workspace/vivado/nocjtag_proj/nocjtag_proj.runs/impl_1/*.rpt     ./reports/nocjtag_proj
