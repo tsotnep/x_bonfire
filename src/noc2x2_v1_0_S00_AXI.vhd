@@ -134,8 +134,8 @@ architecture arch_imp of noc2x2_v1_0_S00_AXI is
   signal uart_write_2  : std_logic;
   signal uart_write_3  : std_logic;
 	
-	signal Pre_Q: std_logic_vector(31 downto 0);
-	signal sel: std_logic_vector(1 downto 0);
+	signal Pre_Q: std_logic_vector(31 downto 0) := (others => '0');
+	signal sel: std_logic_vector(1 downto 0) := (others => '0');
 
 begin
 	-- I/O Connections assignments
@@ -426,26 +426,18 @@ begin
     process(S_AXI_ACLK, S_AXI_ARESETN)
     begin
 		if (rising_edge (S_AXI_ACLK)) then
-		    if ( S_AXI_ARESETN = '0' ) then
-	 	    	Pre_Q <= (others => '0');
-				sel <= "00";
-		    else
 				Pre_Q <= std_logic_vector(unsigned(Pre_Q) + 1);
-				if Pre_Q(27 downto 0) = "111011100110101100101000000" then --5 seconds
-					sel <= std_logic_vector(unsigned(sel) + 1);
-		 	    	Pre_Q <= (others => '0');
-				end if;
-
+				sel <= Pre_Q(13 downto 11);
 				case sel is
-			    when "01" =>
+			    when "00" =>
 					uart_read_0 <= uart_read;
 					uart_write <= uart_write_0;
 
-			    when "10" =>
+			    when "01" =>
 					uart_read_1 <= uart_read;
 					uart_write <= uart_write_1;
 			      
-			    when "00" =>
+			    when "10" =>
 					uart_read_2 <= uart_read;
 					uart_write <= uart_write_2;
 			      
@@ -453,11 +445,8 @@ begin
 					uart_read_3 <= uart_read;
 					uart_write <= uart_write_3;
 			    end case;
-
-			end if;
 		end if;
     end process;
-
 	
 
 
