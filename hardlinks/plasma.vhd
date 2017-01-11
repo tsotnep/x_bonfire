@@ -299,16 +299,60 @@ begin  --architecture
       end if;
    end process;
 
-   u2_ram: ram
-      generic map (memory_type => memory_type, stim_file => stim_file)
+   node_0: 
+   if current_address = 0 generate
+      node_ram_0: ram_0 generic map (memory_type => memory_type, stim_file => stim_file)
       port map (
          clk               => clk,
-		--  reset             => reset,
+      --  reset             => reset,
          enable            => ram_enable,
          write_byte_enable => ram_byte_we,
          address           => ram_address,
          data_write        => ram_data_w,
          data_read         => ram_data_r);
+    end generate;
+         
+   node_1: 
+   if current_address = 1 generate
+       node_ram_1: ram_1 generic map (memory_type => memory_type, stim_file => stim_file)
+       port map (
+          clk               => clk,
+         --  reset             => reset,
+          enable            => ram_enable,
+          write_byte_enable => ram_byte_we,
+          address           => ram_address,
+          data_write        => ram_data_w,
+          data_read         => ram_data_r);
+     end generate;
+     
+         
+    node_2: 
+    if current_address = 2 generate
+       node_ram_2: ram_2 generic map (memory_type => memory_type, stim_file => stim_file)
+       port map (
+          clk               => clk,
+         --  reset             => reset,
+          enable            => ram_enable,
+          write_byte_enable => ram_byte_we,
+          address           => ram_address,
+          data_write        => ram_data_w,
+          data_read         => ram_data_r);
+     end generate;
+
+         
+   node_3: 
+   if current_address = 3 generate
+       node_ram_3: ram_3 generic map (memory_type => memory_type, stim_file => stim_file)
+       port map (
+          clk               => clk,
+         --  reset             => reset,
+          enable            => ram_enable,
+          write_byte_enable => ram_byte_we,
+          address           => ram_address,
+          data_write        => ram_data_w,
+          data_read         => ram_data_r);
+     end generate;
+     
 
    u3_uart: uart
       generic map (log_file => log_file)

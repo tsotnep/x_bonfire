@@ -137,7 +137,7 @@ not_reset <= not reset;
 
 -- connecting the PEs
 PE_0: NoC_Node
-generic map( current_address => 0, stim_file => "/home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_0.txt")
+generic map( current_address => 0, stim_file => "code_0.txt")
 port map( not_reset, clk,
 uart_read => uart_read_0,
 uart_write => uart_write_0,
@@ -151,7 +151,7 @@ uart_write => uart_write_0,
         RX => TX_L_0
    );
 PE_1: NoC_Node
-generic map( current_address => 1, stim_file => "/home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_1.txt")
+generic map( current_address => 1, stim_file => "code_1.txt")
 port map( not_reset, clk,
 uart_read => uart_read_1,
 uart_write => uart_write_1,
@@ -165,7 +165,7 @@ uart_write => uart_write_1,
         RX => TX_L_1
    );
 PE_2: NoC_Node
-generic map( current_address => 2, stim_file => "/home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_2.txt")
+generic map( current_address => 2, stim_file => "code_2.txt")
 port map( not_reset, clk,
 uart_read => uart_read_2,
 uart_write => uart_write_2,
@@ -179,7 +179,7 @@ uart_write => uart_write_2,
         RX => TX_L_2
    );
 PE_3: NoC_Node
-generic map( current_address => 3, stim_file => "/home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_3.txt")
+generic map( current_address => 3, stim_file => "code_3.txt")
 port map( not_reset, clk,
 uart_read => uart_read_3,
 uart_write => uart_write_3,

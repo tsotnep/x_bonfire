@@ -133,6 +133,10 @@ architecture arch_imp of noc2x2_v1_0_S00_AXI is
   signal uart_write_1  : std_logic;
   signal uart_write_2  : std_logic;
   signal uart_write_3  : std_logic;
+	
+	signal Pre_Q: std_logic_vector(31 downto 0);
+	signal sel: std_logic_vector(1 downto 0);
+
 begin
 	-- I/O Connections assignments
 
@@ -414,8 +418,47 @@ begin
         );
 	-- User logic ends
 
-	--TODO: later i will put multiplexing logic here.
-	uart_read_0 <= uart_read;
-	uart_write <= uart_write_0;
+-- i have this, because, otherwise i have to add zynq and then write C app to control slv_reg, which would select which Node outputs uart
+
+--1   01111101  01111000 01000000 = 1 second
+--111 01110011  01011001 01000000 = 5 seconds, on 25 mhz
+
+    process(S_AXI_ACLK, S_AXI_ARESETN)
+    begin
+		if (rising_edge (S_AXI_ACLK)) then
+		    if ( S_AXI_ARESETN = '0' ) then
+	 	    	Pre_Q <= (others => '0');
+				sel <= "00";
+		    else
+				Pre_Q <= std_logic_vector(unsigned(Pre_Q) + 1);
+				if Pre_Q(27 downto 0) = "111011100110101100101000000" then --5 seconds
+					sel <= std_logic_vector(unsigned(sel) + 1);
+		 	    	Pre_Q <= (others => '0');
+				end if;
+
+				case sel is
+			    when "01" =>
+					uart_read_0 <= uart_read;
+					uart_write <= uart_write_0;
+
+			    when "10" =>
+					uart_read_1 <= uart_read;
+					uart_write <= uart_write_1;
+			      
+			    when "00" =>
+					uart_read_2 <= uart_read;
+					uart_write <= uart_write_2;
+			      
+			    when others =>
+					uart_read_3 <= uart_read;
+					uart_write <= uart_write_3;
+			    end case;
+
+			end if;
+		end if;
+    end process;
+
+	
+
 
 end arch_imp;

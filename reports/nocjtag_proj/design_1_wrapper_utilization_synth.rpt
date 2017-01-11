@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
-| Date         : Mon Jan  9 18:46:00 2017
+| Date         : Wed Jan 11 14:38:23 2017
 | Host         : fpga16 running 64-bit Linux Mint 18 Sarah
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 11032 |     0 |     53200 | 20.74 |
-|   LUT as Logic             |  9784 |     0 |     53200 | 18.39 |
+| Slice LUTs*                | 11085 |     0 |     53200 | 20.84 |
+|   LUT as Logic             |  9837 |     0 |     53200 | 18.49 |
 |   LUT as Memory            |  1248 |     0 |     17400 |  7.17 |
 |     LUT as Distributed RAM |  1200 |     0 |           |       |
 |     LUT as Shift Register  |    48 |     0 |           |       |
-| Slice Registers            |  7367 |     0 |    106400 |  6.92 |
+| Slice Registers            |  7369 |     0 |    106400 |  6.93 |
 |   Register as Flip Flop    |  7367 |     0 |    106400 |  6.92 |
-|   Register as Latch        |     0 |     0 |    106400 |  0.00 |
+|   Register as Latch        |     2 |     0 |    106400 | <0.01 |
 | F7 Muxes                   |   124 |     0 |     26600 |  0.47 |
 | F8 Muxes                   |     0 |     0 |     13300 |  0.00 |
 +----------------------------+-------+-------+-----------+-------+
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 117   |          Yes |           - |          Set |
-| 4983  |          Yes |           - |        Reset |
+| 4985  |          Yes |           - |        Reset |
 | 67    |          Yes |         Set |            - |
 | 2200  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -151,18 +151,18 @@ Table of Contents
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
 | FDCE       | 4983 |        Flop & Latch |
-| LUT6       | 4355 |                 LUT |
-| LUT4       | 2492 |                 LUT |
-| LUT5       | 2436 |                 LUT |
+| LUT6       | 4533 |                 LUT |
+| LUT4       | 2409 |                 LUT |
+| LUT5       | 2395 |                 LUT |
 | FDRE       | 2200 |        Flop & Latch |
-| LUT3       | 1027 |                 LUT |
 | RAMD32     | 1024 |  Distributed Memory |
-| LUT2       |  689 |                 LUT |
+| LUT3       |  998 |                 LUT |
+| LUT2       |  725 |                 LUT |
 | RAMD64E    |  176 |  Distributed Memory |
 | MUXF7      |  124 |               MuxFx |
 | FDPE       |  117 |        Flop & Latch |
 | FDSE       |   67 |        Flop & Latch |
-| LUT1       |   59 |                 LUT |
+| LUT1       |   55 |                 LUT |
 | CARRY4     |   50 |          CarryLogic |
 | SRLC32E    |   36 |  Distributed Memory |
 | RAMB18E1   |   17 |        Block Memory |
@@ -170,6 +170,7 @@ Table of Contents
 | OBUF       |    9 |                  IO |
 | RAMB36E1   |    6 |        Block Memory |
 | IBUF       |    4 |                  IO |
+| LDCE       |    2 |        Flop & Latch |
 | BUFG       |    2 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
 +------------+------+---------------------+

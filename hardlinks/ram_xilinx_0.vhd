@@ -41,7 +41,7 @@ use work.mlite_pack.all;
 library UNISIM;
 use UNISIM.vcomponents.all;
 
-entity ram is
+entity ram_0 is
    generic(memory_type : string := "DEFAULT";
            --Number of 8KB blocks of internal RAM, up to 64KB (1 to 8)
            block_count : integer := 1); 
@@ -53,7 +53,7 @@ entity ram is
         data_read         : out std_logic_vector(31 downto 0));
 end; --entity ram
 
-architecture logic of ram is
+architecture logic of ram_0 is
    --type
    type mem32_vector IS ARRAY (NATURAL RANGE<>) OF std_logic_vector(31 downto 0);
 
@@ -200,7 +200,7 @@ INIT_11 => X"040062024300c20000c4a0bebfbd00e0bdbec0004300c3020040420042420200",
 INIT_12 => X"00c202c4a0bebfbd00e0bdbebfc0000040004200c20000400042c34300c20000",
 INIT_13 => X"00c2c24200c20000404200c200000000404200c200404200c2c2424300c2c300",
 INIT_14 => X"020040000000a0bebfbd00e0bdbec04200424202a0bebd00e0bdbebfc0000041",
-INIT_15 => X"00000000000000000000000000000000000000006461326f0000e0bdbebfc042",
+INIT_15 => X"00000000000000000000000000000000000000006461306f0000e0bdbebfc042",
 INIT_16 => X"0000000000000000000000000000000000000000000000000000000000000000",
 INIT_17 => X"0000000000000000000000000000000000000000000000000000000000000000",
 INIT_18 => X"0000000000000000000000000000000000000000000000000000000000000000",

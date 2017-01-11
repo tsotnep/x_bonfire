@@ -29,6 +29,9 @@ add_files -norecurse -scan_for_includes {
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/pipeline.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/pc_next.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_0.vhd
+/home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_1.vhd
+/home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_2.vhd
+/home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_3.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/mem_ctrl.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/NI.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/uart.vhd
@@ -61,6 +64,9 @@ import_files -norecurse {
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/pipeline.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/pc_next.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_0.vhd
+/home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_1.vhd
+/home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_2.vhd
+/home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_3.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/mem_ctrl.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/NI.vhd
 /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/uart.vhd

@@ -24,3 +24,14 @@ ps7_post_config
 
 dow ${PROJ_PATH}/${PROJ_NAME}/${PROJ_NAME}.sdk/${APP_NAME}/Debug/${APP_NAME}.elf
 run
+
+
+#mrd                                Memory Read
+#mwr                                Memory Write
+
+#0x44A0_0000
+
+#fpga -f /home/tsotnep/ownCloud/workspace/vivado/nocjtag_proj/nocjtag_proj.runs/impl_1/design_1_wrapper.bit
+
+#mrd 0x44A00000
+

@@ -43,3 +43,16 @@ ln -f /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_3.vhd /home
 cd /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/
 
 #then restart simulation from gui of vsim
+
+
+
+sha256sum /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_*.txt
+sha256sum /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_*.vhd
+sha256sum /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_*.vhd
+
+
+
+meld /home/tsotnep/ownCloud/git/Bonfire/Software/Plasma/src/NI_test_2x2/ni_test_0.c /home/tsotnep/ownCloud/git/Bonfire/Software/Plasma/src/NI_test_2x2/ni_test_1.c 
+meld /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_0.txt /home/tsotnep/ownCloud/git/Bonfire/tmp/simul_temp/code_1.txt
+meld /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_0.vhd /home/tsotnep/ownCloud/git/Bonfire/RTL/Processor_NI/ram_xilinx_1.vhd
+meld /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_0.vhd /home/tsotnep/ownCloud/git/x_bonfire/hardlinks/ram_xilinx_1.vhd

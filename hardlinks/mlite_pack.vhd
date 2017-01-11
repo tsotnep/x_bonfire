@@ -393,12 +393,50 @@ package mlite_pack is
            cache_miss     : out std_logic);  --cache miss
    end component; --cache
 
-   component ram
+   component ram_0
       generic(memory_type : string := "DEFAULT";
               stim_file: string :="code.txt");
       port(clk               : in std_logic;
            enable            : in std_logic;
 		      --  reset            : in std_logic;
+           write_byte_enable : in std_logic_vector(3 downto 0);
+           address           : in std_logic_vector(31 downto 2);
+           data_write        : in std_logic_vector(31 downto 0);
+           data_read         : out std_logic_vector(31 downto 0));
+   end component; --ram
+
+   component ram_1
+      generic(memory_type : string := "DEFAULT";
+              stim_file: string :="code.txt");
+      port(clk               : in std_logic;
+           enable            : in std_logic;
+          --  reset            : in std_logic;
+           write_byte_enable : in std_logic_vector(3 downto 0);
+           address           : in std_logic_vector(31 downto 2);
+           data_write        : in std_logic_vector(31 downto 0);
+           data_read         : out std_logic_vector(31 downto 0));
+   end component; --ram
+
+
+   component ram_2
+      generic(memory_type : string := "DEFAULT";
+              stim_file: string :="code.txt");
+      port(clk               : in std_logic;
+           enable            : in std_logic;
+          --  reset            : in std_logic;
+           write_byte_enable : in std_logic_vector(3 downto 0);
+           address           : in std_logic_vector(31 downto 2);
+           data_write        : in std_logic_vector(31 downto 0);
+           data_read         : out std_logic_vector(31 downto 0));
+   end component; --ram
+
+
+   component ram_3
+      generic(memory_type : string := "DEFAULT";
+              stim_file: string :="code.txt");
+      port(clk               : in std_logic;
+           enable            : in std_logic;
+          --  reset            : in std_logic;
            write_byte_enable : in std_logic_vector(3 downto 0);
            address           : in std_logic_vector(31 downto 2);
            data_write        : in std_logic_vector(31 downto 0);
